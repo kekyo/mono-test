@@ -19,7 +19,7 @@ namespace HelloWindowsForms.Models
             // Uses Reddit with Json API
             using (var response =
                 await httpClient.
-                    GetAsync($"https://www.reddit.com/{name}/new.json").ConfigureAwait(false))
+                    GetAsync(string.Format("https://www.reddit.com/{0}/new.json", name)).ConfigureAwait(false))
             {
                 using (var stream =
                     await response.Content.ReadAsStreamAsync().ConfigureAwait(false))
